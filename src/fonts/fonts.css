@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Burrow-Beta';
+  src: url('./Burrow/BurrowBeta.ttf');
+}
+
+@font-face {
+  font-family: 'Burrow-Serif';
+  src: url('./Burrow/BurrowSerif.ttf');
+}
+
+@font-face {
+  font-family: 'Burrow-Serif-RI';
+  src: url('./Burrow/BurrowSerif-RegularItalic.woff2');
+  font-weight: 400;
+  font-style: italic;
+}
