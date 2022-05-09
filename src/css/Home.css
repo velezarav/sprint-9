@@ -3,9 +3,13 @@ body {
   background-image: url('../img/background-grunge.png');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
 }
 
+.home {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
 
 .title-row {
   color: white;
@@ -77,7 +81,7 @@ textarea {
   align-self: center;
   border: 1.5px solid rgba(255, 255, 255, 0.1);
   height: 27rem;
-  width: 80%;
+  min-width: 80%;
   overflow: auto;
   outline: none;
   -webkit-appearance: none;
@@ -87,12 +91,12 @@ textarea {
   background: none;
   color: white;
   text-align: end;
-  padding: .5rem;
+  padding:  1rem;
   box-shadow: 0px 0px 2px 1px rgb(255, 255, 255, .5);
   font: 1.5rem 'Burrow-Beta', sans-serif;
   letter-spacing: 1px;
   caret-color: #ADE259;
-  caret-shape: block;
+  margin-right: 15rem;
 }
 
 .poem h2 {
@@ -115,7 +119,7 @@ button {
   color: black;
   font: 5rem 'Burrow-Serif-RI', serif;
   font-style: italic;
-  text-decoration: underline;
+  text-decoration-line: underline;
   text-decoration-thickness: 4px;
   border:1px solid #ADE259;
   padding: 0 1.5rem;
