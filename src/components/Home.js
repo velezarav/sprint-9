@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import '../css/Home.css'
 import Board from './Board'
 import Poem from './Poem'
@@ -7,7 +8,7 @@ export default () => {
 
 
 
-
+  console.log('home')
 
 
   return (

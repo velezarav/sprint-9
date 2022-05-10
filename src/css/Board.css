@@ -1,6 +1,9 @@
+@import '../fonts/fonts.css';
+
 .board {
   margin-right: 5rem;
   height: 100vh;
+  width: 40rem;
   min-width: 40rem;
   margin-left: 3rem;
   text-align: start;
@@ -12,10 +15,11 @@
 }
 
 .board-bar {
+  margin-top: 2rem;
   padding: 1rem 4rem;
   width: 80%;
   color: #aed259;
-  font-size: 2rem;
+  font-size: 1.7rem;
   display: flex;
   flex-direction: column;
   text-align: start;
@@ -42,6 +46,8 @@
 }
 
 .board h5 {
+  font-family: 'Burrow-Serif-Black', serif;
+  text-shadow: 2px 0 white;
   align-self: flex-start;
   margin: 0;
   margin-left: 1.5rem;
@@ -57,6 +63,8 @@
 }
 
 .word-container {
+  font-family: 'Burrow-Serif-Black', serif;
+  font-weight: 800;
   margin: 0 auto;
   margin-top: 5rem;
   display: flex;
@@ -68,10 +76,10 @@
 .word {
   background-color: #aed259;
   width: fit-content;
-  padding-inline: 1rem;
+  padding-inline: 2rem;
   padding-block: .5rem;
   border-radius: 40px;
-  font-weight: bolder;
+  font-weight: bold;
   font-size: 4rem;
   margin:0;
   align-self: center;
@@ -87,14 +95,6 @@
   font-size: 1.5rem;
 }
 
-.word-container a:nth-child(1) {
-  color: white;
-}
-
-.word-container a:nth-child(1):hover {
-  color: rgb(181, 181, 181);
-}
-
 .word-container a:nth-child(3) {
   color: #aed259;
   text-decoration: underline;
@@ -103,3 +103,75 @@
 .word-container a:nth-child(3):hover {
   color: white;
 }
+
+
+.line-container {
+  margin: 4rem auto;
+  display: flex;
+  align-self: center;
+  width: 80%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.line {
+  background-color: #aed259;
+  width: fit-content;
+  color: white;
+  letter-spacing: .1rem;
+  padding-inline: 2rem;
+  padding-block: .5rem;
+  border-radius: 40px;
+  font-weight: 400;
+  font-size: 1rem;
+  margin:0;
+  align-self: center;
+  line-height: .1rem;
+  text-align: end;
+  font-family: 'Burrow-Serif', serif;
+  padding-bottom: 1rem;
+}
+
+.line p:nth-child(1){
+  color: rgb(41, 40, 40);
+  font-family: 'Burrow-Serif-Black', serif;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+  letter-spacing: .1rem;
+  text-align: start;
+  margin-left: 1rem;
+}
+
+.line p:nth-child(3){
+  margin-top: 1.5rem;
+  font-family: 'Burrow-Serif', serif;
+  font-weight: bold;
+}
+
+.line-container a:nth-child(3) {
+  align-self: flex-end;
+  margin-top: .5rem;
+  font-size: 1.5rem;
+  color: #aed259;
+  text-decoration: underline;
+}
+
+.line-container a:hover {
+  color: rgb(181, 181, 181);
+}
+
+.close-button {
+  font-family: 'Burrow-Serif-Black', serif;
+  font-weight: 800;
+  align-self: flex-end;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.close-button:hover {
+  color: rgb(181, 181, 181);
+}
+

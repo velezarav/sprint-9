@@ -11,7 +11,7 @@ export default () => {
         <a>personal area</a>
       </div>
       <div className='poem'>
-        <h2>write here...</h2>
+        <h2>Write here...</h2>
         <div className='text'>
           <textarea autoFocus>
           </textarea>

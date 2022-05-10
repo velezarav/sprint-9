@@ -4,6 +4,13 @@
 }
 
 @font-face {
+  font-family: 'Burrow-Serif-Black';
+  src: url('./Burrow/BurrowSerif.ttf');
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
   font-family: 'Burrow-Serif';
   src: url('./Burrow/BurrowSerif.ttf');
 }
