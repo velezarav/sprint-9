@@ -1,18 +1,42 @@
 import '../css/Board.css'
 import Word from './Word'
 import Line from './Line'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import artworks from '../artworks.js'
+import Image from './Image'
 
 export default () => {
   const [showWord, setShowWord] = useState(false);
   const [showLine, setShowLine] = useState(false);
   const [showImage, setShowImage] = useState(false);
+  const [image, setImage] = useState({})
 
-  const [inspiration, setInspiration] = useState({
-    word: false,
-    line: false,
-    image: false
-  })
+  const randomNumber = Math.floor(Math.random() * artworks.length);
+
+  const urlImage = `https://api.artic.edu/api/v1/artworks/${artworks[randomNumber]}`
+
+  let newImage = {}
+  const fetchImage = async () => {
+    try {
+      await fetch(urlImage)
+        .then(res => res.json())
+        .then(data => newImage = {
+          ...data.data
+          }
+        )
+        setImage(newImage)
+    } catch(err) {
+      console.log(err)
+      return err
+    }
+  }
+
+  useEffect(()=> {
+    fetchImage()
+  }, [])
+
+  console.log(image)
+
 
   const handleWord = () => {
     setShowWord(true)
@@ -33,15 +57,22 @@ export default () => {
   }
   console.log('board')
 
+  const backgroundImage = {
+    backgroundImage: `url(https://www.artic.edu/iiif/2/${image.image_id}/full/843,/0/default.jpg)`,
+    backgroundSize: 'cover'
+  }
+
   return (
-    <div className='board'>
-      <div className='board-bar'>
+    <div className='board' style={backgroundImage}>
+      <div className='board-filter'>
+        <div className='board-bar'>
         <a onClick={handleLine}>poem line</a>
         <a onClick={handleWord}>word</a>
         <a onClick={handleImage}>image</a>
       </div>
       { showWord && <Word state={setShowWord}/> }
       { showLine && <Line state={setShowLine}/> }
+      { showImage && <Image imageData={image} state={setShowImage} fetchImage={fetchImage}/>}
       <div className='board-title'>
         <h5>NEED</h5>
         <h5>SOME</h5>
@@ -49,5 +80,7 @@ export default () => {
         <h5>?</h5>
       </div>
     </div>
+      </div>
+      
   )
 }

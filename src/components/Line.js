@@ -1,4 +1,5 @@
-
+import { useModal } from '../hooks/useModal'
+import Modal from '../components/Modal'
 import { useEffect, useState } from 'react'
 import '../css/Board.css'
 
@@ -7,36 +8,34 @@ export default ({ state }) => {
   const [poem, setPoem] = useState({})
   const [line, setLine] = useState("")
 
-
-  useEffect(() => {
-    let newPoem = []
-
-    const axiosPoem = async () => {
-      try {
-        let response = await fetch("https://poetrydb.org/random")
+  const [isOpenModal, openModal, closeModal] = useModal(false);
+  
+  let newPoem = []
+  const fetchPoem = async () => {
+    try {
+      let response = await fetch("https://poetrydb.org/random")
         .then(res => res.json())
         .then(data => newPoem = [...data])
-        setPoem(newPoem[0])
-      } catch (err) {
-        console.log(err)
-        return err
-      }
-      console.log(newPoem)
-
-      const lineCount = parseInt(newPoem[0].linecount)
-      const randomNumber = Math.floor(Math.random() * lineCount) + 1;
-      const randomLine = newPoem[0].lines[randomNumber]
-      setLine(randomLine)
-
+      setPoem(newPoem[0])
+    } catch (err) {
+      console.log(err)
+      return err
     }
-    axiosPoem()
+    const lineCount = parseInt(newPoem[0].linecount)
+    const randomNumber = Math.floor(Math.random() * lineCount) + 1;
+    const randomLine = newPoem[0].lines[randomNumber]
+    setLine(randomLine)
+
+  }
+  useEffect(() => {
+    fetchPoem()
   }, [])
-
-
 
   console.log(poem)
 
-
+  const handleChangePoem = () => {
+    fetchPoem()
+  }
 
 
   const closeWord = () => {
@@ -51,7 +50,9 @@ export default ({ state }) => {
         <p>Fragment from: {poem.title}</p>
         <p>- {poem.author}</p>
       </div>
-      <a>Read the poem &gt;&gt;</a>
+      <a onClick={openModal}>Read the poem &gt;&gt;</a>
+      <Modal isOpen={isOpenModal} closeModal={closeModal}>{poem.lines?.map(line => <p key={line[line]}>{line}</p>)}</Modal>
+      <a onClick={handleChangePoem}>Another poem&gt;&gt;</a>
     </div>
   )
 }
