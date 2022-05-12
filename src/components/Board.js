@@ -2,7 +2,7 @@ import '../css/Board.css'
 import Word from './Word'
 import Line from './Line'
 import { useEffect, useState } from 'react'
-import artworks from '../artworks.js'
+import artworks from '../data/artworks.js'
 import Image from './Image'
 
 export default () => {
@@ -39,21 +39,21 @@ export default () => {
 
 
   const handleWord = () => {
-    setShowWord(true)
+    setShowWord(!showWord)
     setShowLine(false)
     setShowImage(false)
   }
 
   const handleLine = () => {
     setShowWord(false)
-    setShowLine(true)
+    setShowLine(!showLine)
     setShowImage(false)
   }
 
   const handleImage = () => {
     setShowWord(false)
     setShowLine(false)
-    setShowImage(true)
+    setShowImage(!showImage)
   }
   console.log('board')
 
@@ -70,15 +70,15 @@ export default () => {
         <a onClick={handleWord}>word</a>
         <a onClick={handleImage}>image</a>
       </div>
-      { showWord && <Word state={setShowWord}/> }
-      { showLine && <Line state={setShowLine}/> }
-      { showImage && <Image imageData={image} state={setShowImage} fetchImage={fetchImage}/>}
-      <div className='board-title'>
+      {<div className={(!showImage && !showLine && !showWord) ? 'board-title' : 'board-title-inactive'}>
         <h5>NEED</h5>
         <h5>SOME</h5>
         <h5>INSPIRATION</h5>
         <h5>?</h5>
-      </div>
+      </div>}
+      { showWord && <Word state={setShowWord}/> }
+      { showLine && <Line state={setShowLine}/> }
+      { showImage && <Image imageData={image} state={setShowImage} fetchImage={fetchImage}/>}
     </div>
       </div>
       

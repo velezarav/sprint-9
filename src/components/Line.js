@@ -9,23 +9,27 @@ export default ({ state }) => {
   const [line, setLine] = useState("")
 
   const [isOpenModal, openModal, closeModal] = useModal(false);
+
   
-  let newPoem = []
+  let newPoem = {}
   const fetchPoem = async () => {
     try {
       let response = await fetch("https://poetrydb.org/random")
         .then(res => res.json())
-        .then(data => newPoem = [...data])
-      setPoem(newPoem[0])
+        .then(data => {
+          console.log(data)
+          newPoem = {...data[0]}})
+      setPoem(newPoem)
     } catch (err) {
       console.log(err)
       return err
     }
-    const lineCount = parseInt(newPoem[0].linecount)
+    const lineCount = parseInt(newPoem.linecount)
     const randomNumber = Math.floor(Math.random() * lineCount) + 1;
-    const randomLine = newPoem[0].lines[randomNumber]
+    const newLines = [...newPoem.lines]
+    const linesFiltered = newLines.filter(line => line.length > 0)
+    const randomLine = linesFiltered[randomNumber]
     setLine(randomLine)
-
   }
   useEffect(() => {
     fetchPoem()

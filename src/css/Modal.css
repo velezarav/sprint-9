@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgb(166, 214, 87, .15);
   display: none;
   justify-content: center;
   align-items: center;
@@ -20,6 +20,7 @@
   background-color: #fff;
   color: rgb(63, 62, 69);
   text-align: center;
+  border-radius: 10px;
 }
 
 .modal-close {
@@ -35,5 +36,26 @@
 .modal img {
   max-width:100%;
   max-height:100%;
+  margin: 0;
+  border: none;
+  font-size: 1rem;
+  float: left;
 }
 
+::-webkit-scrollbar {
+  border: none;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(88, 202, 86, .4);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(88, 202, 86, .6);
+}

@@ -3,7 +3,6 @@
 body {
   height: 100%;
   background-image: url('../img/background-grunge.png');
-  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -53,18 +52,26 @@ a {
 
 .bar-links {
   margin: 0 auto;
-  color: #ADE259;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  font-family: 'Burrow-Serif', serif;
-  font-size: 1.7rem;
-  font-weight: bold;
-  letter-spacing: 1px;
   position: absolute;
   top: 4.5rem;
   left: 16rem;
   white-space: nowrap;
+  color: #ADE259;
+  font-family: 'Burrow-Serif', serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.bar-links a {
+  color: #ADE259;
+  font-family: 'Burrow-Serif', serif;
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .bar-links p {
@@ -116,7 +123,7 @@ textarea {
   font-size: 1.8rem;
 }
 
-button {
+.poem-button {
   border: none;
   margin: 0;
   padding: 0;
@@ -141,4 +148,12 @@ button {
 
 button:hover {
   color: #ADE259;
+}
+
+@media only screen and (max-width: 768px) {
+  .home {
+    display: flex;
+    flex-direction: column;    
+    height: 100vh;
+  }
 }

@@ -2,7 +2,7 @@
 
 .board {
   margin-right: 5rem;
-  height: 100vh;
+  min-height: 100vh;
   width: 40rem;
   min-width: 40rem;
   margin-left: 3rem;
@@ -60,11 +60,9 @@
 
 .board h5 {
   font-family: 'Burrow-Serif-Black', serif;
-  text-shadow: 2px 0 white;
   align-self: flex-start;
   margin: 0;
   margin-left: 1.5rem;
-  color: white;
   font-weight: 800;
   font-size: 5rem;
   vertical-align: bottom;
@@ -73,9 +71,17 @@
 .board-title {
   position: absolute;
   bottom: 2rem;
-  z-index: 0;
+  z-index: 3;
+  color: white;
+  text-shadow: 2px 0 white;
 }
-
+.board-title-inactive {
+  position: absolute;
+  bottom: 2rem;
+  z-index: 0;
+  color: rgb(255, 255, 255, .2);
+  text-shadow: none;
+}
 .word-container {
   font-family: 'Burrow-Serif-Black', serif;
   font-weight: 800;
@@ -104,8 +110,9 @@
 }
 
 .word-container a {
+  position: relative;
   align-self: flex-end;
-  margin-right: 10rem;
+  margin-right: 5rem;
   font-size: 1.5rem;
 }
 
@@ -120,6 +127,7 @@
 
 
 .line-container {
+  position: relative;
   margin: 4rem auto;
   display: flex;
   align-self: center;
@@ -127,7 +135,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  z-index: 99;
+  z-index: 2;
 }
 
 .line {
@@ -242,13 +250,12 @@
   font-weight: 800;
   align-self: flex-end;
   font-size: 1.5rem;
-  color: white;
+  color: rgb(255, 255, 255, .5);
   text-decoration: none;
-  margin-bottom: 1rem;
 }
 
 .close-button:hover {
-  color: rgb(181, 181, 181);
+  color: rgb(255, 255, 255, .8);
 }
 
 .image-container .close-button {
@@ -256,7 +263,22 @@
   font-weight: 800;
   align-self: flex-end;
   font-size: 1.5rem;
-  color: white;
+  color: rgb(255, 255, 255, .5);
   text-decoration: none;
   margin-bottom: 1rem;
+}
+
+.image-container .close-button:hover {
+  color: rgb(255, 255, 255, .8);
+}
+
+@media only screen and (max-width: 768px) {
+  .board {
+    min-width: 40rem;
+  }
+
+  .board-title {
+    position: relative;
+
+  }
 }

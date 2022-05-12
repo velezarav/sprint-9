@@ -5,7 +5,6 @@ import Modal from '../components/Modal'
 
 export default ({imageData, state, fetchImage}) => {
 
-  const [image, setImage] = useState()
   const [isOpenModal, openModal, closeModal] = useModal(false);
 
   const displayImage = `https://www.artic.edu/iiif/2/${imageData.image_id}/full/843,/0/default.jpg`

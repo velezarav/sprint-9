@@ -1,0 +1,43 @@
+.poem-wall {
+  font-family: "Burrow-Serif", sans-serif;
+  font-weight: 400;
+  position: absolute;
+  margin-top: 6rem;
+  margin-left: 7rem;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  max-width: 90%;
+  overflow: auto;
+  height: 100vh;
+  justify-content: center;
+  white-space: pre-wrap;
+  align-items: center;
+}
+
+.single-poem {
+  position: relative;
+  min-width: 20%;
+  max-width: 20%;
+  color: white;
+  margin: 1.5rem;
+  text-align: end;
+  height: fit-content;
+  padding-inline: .5rem;
+  border: 1px solid transparent;
+}
+
+.poem-user {
+  font-weight: bold;
+  text-align: start;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+}
+
+.single-poem:hover .poem-user  {
+  color: #ADE259;
+}
+
+.single-poem:hover {
+  border: 1px solid #ADE259;
+}

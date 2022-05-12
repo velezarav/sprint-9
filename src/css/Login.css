@@ -1,0 +1,133 @@
+.login-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  position: relative;
+}
+
+.login {
+  margin-right: 5rem;
+  min-height: 100vh;
+  width: 40rem;
+  min-width: 40rem;
+  margin-left: 3rem;
+  text-align: start;
+  font-family: 'Burrow-Serif', serif;
+  background: linear-gradient(rgba(31, 31, 31, 0.6), rgba(21, 21, 21, 0.6)),url('../img/cassat.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0px 0px 10px rgb(51, 51, 51);
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;  
+  align-self: flex-end;
+  position: relative;
+}
+
+
+.login h2 {
+  color: white;
+  font-family: 'Burrow-Serif-Black', serif;
+  text-shadow: 2px 0 white;
+  font-weight: bold;
+  font-size: 3em;
+  align-self: flex-end;
+  margin-right: 2rem;
+}
+
+.login input {
+  -webkit-appearance: none;
+  position: relative;
+  align-self: flex-end;
+  margin-right: 2rem;
+  appearance: none;
+  background: none;
+  border: none;
+  width: 50%;
+  border-bottom: 2px solid #ADE259;
+  margin-bottom: 2rem;
+  color: white;
+  font-family: 'Burrow-Serif', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: .1rem;
+  text-align: end;
+}
+
+.login input:focus {
+  outline: none;
+}
+
+.login label {
+  align-self: flex-end;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  color: #ADE259;
+  font-family: 'Burrow-Serif', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.login button {
+  border: none;
+  background: transparent;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  color: black;
+  font: 3rem 'Burrow-Serif-RI', serif;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration-line: underline;
+  text-decoration-thickness: 4px;
+  position: relative;
+  display: flex;
+  cursor:crosshair;
+  align-self: center;
+  margin-top: 3rem;
+}
+
+.login button:hover {
+  color: #ADE259;
+}
+
+.poem-login {
+  display: inline-block;
+  margin-top: 10rem;
+  color: white;
+  margin-left: 13rem;
+  width: 27rem;
+  min-width: 27rem;
+  min-height: 30rem;
+  font-family: 'Burrow-Serif', serif;
+  font-size: 1.3rem;
+}
+
+.poem-login-title {
+  font-style: italic;
+}
+
+.poem-login-author {
+  font-weight: bold;
+  margin: 0;
+  margin-left: 2rem;
+}
+
+
+.login a {
+  position: absolute;
+	bottom: 5rem;
+  text-decoration: underline;
+  color: #ADE259;
+  font-size: 1.5rem;
+  margin-left: 5rem;
+  letter-spacing: .1rem;
+}
+
+.login a:hover {
+  color: gray;
+}
