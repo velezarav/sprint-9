@@ -20,8 +20,8 @@ export default () => {
 
   }
 
-  const signup = <div className="login">
-    <h2>LOG IN</h2>
+  const signup = <div className="login signup">
+    <h2>CREATE AN ACCOUNT</h2>
     <label htmlFor="name">name</label>
     <input
       type="text"
@@ -55,7 +55,8 @@ export default () => {
       required
     />
     <button className="log-button" onClick={handleSubmitLogin}>REGISTER</button>
-
+    <p>Already have an account?</p>
+    <Link to={"/login"}>log in</Link>
   </div>
 
 
@@ -75,8 +76,8 @@ export default () => {
             which reach the head,<br />
             but never<br />
             touch the heart.”</p>
-          <p className="poem-login-title">A word</p>
-          <p className="poem-login-author">Emily Dickinson</p>
+          <p className="poem-login-title">Words &#40;frag.&#41;</p>
+          <p className="poem-login-author">Charles Swain</p>
         </div>
       </div>
       {signup}

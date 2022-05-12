@@ -3,6 +3,7 @@
 body {
   height: 100%;
   background-image: url('../img/background-grunge.png');
+  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -150,10 +151,52 @@ button:hover {
   color: #ADE259;
 }
 
-@media only screen and (max-width: 768px) {
-  .home {
-    display: flex;
-    flex-direction: column;    
-    height: 100vh;
-  }
+.welcome {
+  width: 50%;
+  align-self: center;
+  margin-top: 10%;
+  margin-left: 25%;
+  text-align: end;
+}
+
+.welcome p {
+  color: white;
+  font-family: 'Burrow-Serif', serif;
+  font-size: 1.3em;
+  letter-spacing: .115rem;
+  margin-block: .5rem;
+}
+
+.welcome p span{
+  font-weight: bold;
+  text-shadow: 2px 0 rgb(255, 255, 255, .2);
+  font-family: 'Burrow-Serif-Black', serif;
+  font-size: 1.5em;
+}
+
+.welcome a {
+  border: none;
+  margin-top: 3rem;
+  padding: 0;
+  background: transparent;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  color: #ADE259;
+  font: 2rem 'Burrow-Serif-RI', serif;
+  font-style: italic;
+  text-decoration-line: underline;
+  text-decoration-thickness: 4px;
+  border:1px solid #ADE259;
+  padding: 1rem 1.5rem;
+  width: fit-content;
+  position: relative;
+  display: flex;
+  cursor:crosshair;
+}
+
+.welcome a:hover {
+  color: white;
+  border-color: transparent;
 }

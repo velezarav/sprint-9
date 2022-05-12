@@ -38,7 +38,7 @@ export default () => {
       value={user.password}
       required
     />
-    <button className="log-button" onClick={handleSubmitLogin}>LOG IN</button>
+    <button className="log-button" onClick={handleSubmitLogin}>ENTER</button>
     <Link to={"/register"}>register here</Link>
   </div>
 
